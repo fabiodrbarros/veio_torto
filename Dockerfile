@@ -8,6 +8,7 @@ COPY --chown=node:node server.mjs db.mjs config.mjs ./
 COPY --chown=node:node public ./public
 COPY --chown=node:node private ./private
 COPY --chown=node:node scripts/create-admin.mjs ./scripts/create-admin.mjs
+COPY --chown=node:node scripts/seed-examples.mjs ./scripts/seed-examples.mjs
 USER node
 EXPOSE 3000
 CMD ["node", "server.mjs"]

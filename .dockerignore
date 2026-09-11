@@ -11,3 +11,4 @@
 !private/**
 !scripts/
 !scripts/create-admin.mjs
+!scripts/seed-examples.mjs

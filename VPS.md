@@ -90,6 +90,16 @@ Abra `https://DOMINIO_REAL/healthz` e depois `https://DOMINIO_REAL/admin`. Crie 
 
 ## 4. Atualizações e backups
 
+### Adicionar os três exemplos pedidos e configurar WhatsApp
+
+Após atualizar a imagem, execute uma vez:
+
+```bash
+docker compose --env-file .env.vps exec website node scripts/seed-examples.mjs
+```
+
+Cria Mesa Raiz, Espelho Origem e Centro de mesa, identificados como exemplos, publicados e destacados, com cinco fotografias no volume. Configura o WhatsApp para **+351 935 277 180**. Os preços e a medida da mesa são os exemplos das referências. Pode editar ou eliminar as peças na administração. Repetir o comando preserva peças existentes com as referências `EX-VT-014`, `EX-VT-015` e `EX-VT-016`, evitando duplicações; repõe o WhatsApp indicado. Não é executado automaticamente ao iniciar ou atualizar.
+
 Faça uma cópia de segurança antes de atualizar:
 
 ```bash
