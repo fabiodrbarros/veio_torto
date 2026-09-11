@@ -1,0 +1,13 @@
+*
+!Dockerfile
+!package.json
+!package-lock.json
+!server.mjs
+!db.mjs
+!config.mjs
+!public/
+!public/**
+!private/
+!private/**
+!scripts/
+!scripts/create-admin.mjs
