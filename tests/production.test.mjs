@@ -28,6 +28,9 @@ test('Cloudflare: healthcheck, cache, sessão Secure, demonstração bloqueada e
     assert.equal((await fetch(base+'/api/catalog')).headers.get('cache-control'),'no-store');
     assert.equal((await fetch(base+'/demonstracao')).status,404);
     assert.equal((await fetch(base+'/demo.js')).status,404);
+    const wrongOrigin=await fetch(base+'/api/login',{method:'POST',headers:{Origin:'https://www.example.test','Content-Type':'application/json'},body:JSON.stringify({email:'qa@example.test',password})});
+    assert.equal(wrongOrigin.status,403);
+    assert.match((await wrongOrigin.json()).error,/SITE_ORIGIN/);
     const login=await fetch(base+'/api/login',{method:'POST',headers:{Origin:'https://example.test','Content-Type':'application/json','X-Forwarded-For':'192.0.2.10'},body:JSON.stringify({email:'qa@example.test',password})});
     assert.equal(login.status,200);assert.match(login.headers.get('set-cookie'),/; Secure/);
     const cookie=login.headers.get('set-cookie').split(';')[0];
@@ -35,6 +38,7 @@ test('Cloudflare: healthcheck, cache, sessão Secure, demonstração bloqueada e
     for(let i=0;i<16;i++){
       const r=await fetch(base+'/api/login',{method:'POST',headers:{Origin:'https://example.test','Content-Type':'application/json','X-Forwarded-For':'192.0.2.20'},body:JSON.stringify({email:'nobody@example.test',password:'invalid'})});
       assert.equal(r.status,i<15?401:429);
+      if(i===15){assert.match((await r.json()).error,/tentativas/);assert.ok(Number(r.headers.get('Retry-After'))>0)}
     }
     const other=await fetch(base+'/api/login',{method:'POST',headers:{Origin:'https://example.test','Content-Type':'application/json','X-Forwarded-For':'192.0.2.21'},body:JSON.stringify({email:'nobody@example.test',password:'invalid'})});
     assert.equal(other.status,401);
