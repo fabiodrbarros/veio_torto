@@ -70,7 +70,7 @@
 @media(max-width:640px){
  .public-site{--page-gutter:6%;--header-height:94px}
  .public-site .site-header{position:relative;min-height:94px;height:auto;flex-wrap:wrap;gap:0;align-content:center;padding:8px 0}
- .public-site .site-header .logo{width:183px;height:72px;max-height:none}
+ .public-site .site-header .logo{width:183px;height:72px;max-height:none;background:transparent;filter:grayscale(1) brightness(1.12) contrast(1.08);mix-blend-mode:multiply}
  .public-site .menu-toggle{display:block;margin-left:auto;background:none;border:0;border-bottom:1px solid #77796b;min-height:44px;padding:8px 0;font-size:15px;color:inherit}
  .public-site .site-header nav{display:none;order:3;width:100%;margin:0;padding:16px 0 4px;font-size:17px;gap:0;align-items:stretch}
  .public-site .site-header nav.is-open{display:flex;flex-direction:column}
