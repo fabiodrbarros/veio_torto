@@ -23,5 +23,5 @@ export function homeView({settings,categories,base,esc}){
 }
 export function footerView({settings,generic,esc}){
   return `<div class="footer-main"><span class="footer-brand">VEIO TORTO · ARTESANATO FERNANDES</span><nav aria-label="Navegação do rodapé"><a href="/pecas">Peças</a><span aria-hidden="true">·</span><a href="/#artesao">O artesão</a><span aria-hidden="true">·</span><a href="/#contactos">Contactos</a></nav>${generic?`<a href="${esc(generic)}" target="_blank" rel="noopener noreferrer">WhatsApp ${arrow}</a>`:'<span>Contactos disponíveis em breve.</span>'}</div>
-  <div class="footer-details">${settings.email?`<a href="mailto:${esc(settings.email)}">${esc(settings.email)}</a>`:''}${settings.phone?`<span>${esc(settings.phone)}</span>`:''}${settings.address?`<span>${esc(settings.address)}</span>`:''}<a class="admin-access" href="/admin">Área do artesão</a></div>`;
+  <div class="footer-details">${settings.email?`<a href="mailto:${esc(settings.email)}">${esc(settings.email)}</a>`:''}${settings.phone?`<span>${esc(settings.phone)}</span>`:''}${settings.address?`<span>${esc(settings.address)}</span>`:''}</div>`;
 }

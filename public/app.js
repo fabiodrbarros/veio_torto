@@ -1,4 +1,4 @@
-import {homeView,footerView} from './home-view.js?v=whatsapp-label-2';
+import {homeView,footerView} from './home-view.js?v=footer-3';
 export const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const price=p=>p.price===null?'Sob consulta':new Intl.NumberFormat('pt-PT',{style:'currency',currency:'EUR',minimumFractionDigits:0,maximumFractionDigits:2}).format(p.price);
 export const states={available:'Disponível',reserved:'Reservada',sold:'Vendida'};
