@@ -1,7 +1,7 @@
 /* Public presentation only. This file is not loaded by the administration. */
 .public-site{--page-gutter:6.15%;--header-height:clamp(100px,9.7vw,140px);--collection-bg:#292d23;background:#f6f3ed;color:#22231d}
 .public-site .site-header{height:var(--header-height);min-height:var(--header-height);max-width:1600px;width:calc(100% - var(--page-gutter)*2);padding:0;margin:auto;gap:30px;border-bottom:1px solid #aeafa3;flex-wrap:nowrap}
-.public-site .site-header .logo{width:clamp(195px,19vw,275px);height:auto;max-height:100px;display:block}
+.public-site .site-header .logo{width:clamp(195px,19vw,275px);height:auto;max-height:100px;display:block;filter:url(#logo-transparent);mix-blend-mode:normal;background:transparent}
 .public-site .site-header nav{margin:0 0 0 auto;gap:clamp(30px,3.75vw,54px);font-size:clamp(14px,1.22vw,17px);align-items:center}
 .public-site .site-header .header-contact{background:none;color:inherit;border-bottom:1px solid #77796b;min-height:44px;height:auto;width:auto;padding:0;display:inline-flex;align-items:center;gap:8px;margin-left:clamp(15px,2.5vw,36px);font-size:inherit;line-height:1.4}
 .public-site .site-header .header-contact .icon{display:inline-block;width:16px;height:16px}
@@ -70,7 +70,7 @@
 @media(max-width:640px){
  .public-site{--page-gutter:6%;--header-height:94px}
  .public-site .site-header{position:relative;min-height:94px;height:auto;flex-wrap:wrap;gap:0;align-content:center;padding:8px 0}
- .public-site .site-header .logo{width:183px;height:72px;max-height:none;background:transparent;filter:grayscale(1) brightness(1.12) contrast(1.08);mix-blend-mode:multiply}
+ .public-site .site-header .logo{width:183px;height:72px;max-height:none}
  .public-site .menu-toggle{display:block;margin-left:auto;background:none;border:0;border-bottom:1px solid #77796b;min-height:44px;padding:8px 0;font-size:15px;color:inherit}
  .public-site .site-header nav{display:none;order:3;width:100%;margin:0;padding:16px 0 4px;font-size:17px;gap:0;align-items:stretch}
  .public-site .site-header nav.is-open{display:flex;flex-direction:column}
@@ -96,3 +96,6 @@
 }
 @media(min-width:520px) and (max-width:640px){.home-page .home-collection .cards{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .home-collection .card-info{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.public-site{scroll-behavior:auto}}
+
+/* Convert the original logo background to zero alpha, rather than painting it white. */
+.public-site .logo-filter-defs{position:absolute;pointer-events:none}
