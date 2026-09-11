@@ -23,7 +23,7 @@
 .home-page .intro-description{font-size:clamp(19px,1.95vw,28px);line-height:1.45;margin:0 0 28px;letter-spacing:-.015em}
 .home-page .intro-button{background:#393f30;padding:15px 24px;font-size:clamp(16px,1.45vw,20px);min-height:50px;gap:24px;line-height:1.2}
 .home-page .intro-button:hover{background:#4b523e}
-.home-page .intro-symbol{display:block;width:100%;height:auto;mix-blend-mode:multiply;filter:brightness(1.06);align-self:center}
+.home-page .intro-symbol{display:block;width:100%;height:auto;mix-blend-mode:normal;filter:url(#logo-transparent);background:transparent;align-self:center}
 .home-page .intro-strip{border-top:1px solid #aeafa3;display:grid;grid-template-columns:1fr 1fr auto;gap:20px;align-items:center;min-height:clamp(66px,6.4vw,90px);padding:14px 0;font-size:clamp(13px,1.16vw,16px)}
 .home-page .intro-strip>span:first-child{font-size:clamp(10px,1vw,14px);letter-spacing:1px}
 .home-page .intro-strip>a{display:flex;align-items:center;gap:10px;min-height:44px}
