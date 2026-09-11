@@ -29,3 +29,10 @@ a[x-apple-data-detectors]{color:inherit!important;text-decoration:inherit!import
 @media(max-width:750px){.header-contact .icon{width:23px;height:23px}}
 
 .whatsapp-button{gap:10px;padding:13px 24px;min-height:50px;line-height:1.25;white-space:nowrap}.whatsapp-button .icon{width:25px;height:25px;stroke-width:1.5}.whatsapp-button .button-label{display:block;font-size:16px;line-height:1.25}.header-contact{flex-shrink:0}@media(max-width:750px){.header-contact.whatsapp-button{width:44px;height:44px;min-height:44px;padding:0;gap:0}.header-contact .button-label{display:none}}
+
+/* Compact header CTA matching the approved reference. */
+header .header-contact.whatsapp-button{display:inline-flex;flex:0 0 auto;align-self:center;width:auto;min-width:0;max-width:none;height:50px;min-height:50px;padding:0 24px;gap:0;font-size:16px;line-height:1}
+header .header-contact .button-label{display:block;font-size:16px;line-height:1;white-space:nowrap}
+header .header-contact .icon{display:none}
+.contacts .whatsapp-button{align-self:start;justify-self:start;width:max-content;max-width:100%;flex:none}
+@media(max-width:750px){header .header-contact.whatsapp-button{height:40px;min-height:40px;padding:0 12px}header .header-contact .button-label{font-size:13px}header .logo{width:185px}header{column-gap:8px}}
